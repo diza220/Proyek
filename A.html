@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zeeskuy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      overflow-y: scroll;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      z-index: -1;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 5px 0;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 20px 0;
+      border: 3px solid white;
+    }
+
+    .username {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 10px 15px;
+      margin: 8px 0;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 14px;
+      width: 70%;
+      max-width: 250px;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <div class="container">
+    <h1>Welcome 🥳🎉</h1>
+    <p>Waktu saat ini:</p>
+    <p id="time">00:00:00</p>
+
+    <img class="profile-img" src="https://tmpfiles.org/dl/29046912/1747818430250e1lsdvwwsl.png" alt="Profile" />
+    <div class="username">@zeeskuy</div>
+    <p>Hi, I am Andiza. I live in Bandung, West Java. I am 22 years old.</p>
+
+    <a href="https://www.instagram.com/zeeskuy77?igsh=dmNkcm5ydG1udm1q" class="button">Instagram</a>
+    <a href="https://t.me" class="button">Telegram</a>
+    <a href="https://wa.me/6283142631639?text=Halo%20there" class="button">WhatsApp</a>
+    <a href="https://discord.gg/ScbkSXq8" class="button">Discord</a>
+  </div>
+
+  <!-- Script Waktu -->
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString();
+      document.getElementById("time").textContent = timeStr;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: {
+          type: "circle",
+          stroke: { width: 0, color: "#000000" },
+          polygon: { nb_sides: 5 }
+        },
+        opacity: {
+          value: 0.5,
+          random: false,
+          anim: { enable: false }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: { enable: false }
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 3,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>
